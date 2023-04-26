@@ -1,0 +1,30 @@
+label {
+  padding-left: 2%;
+}
+
+
+input {
+  border-radius: 8px;
+  border: 2px solid #dddfe2;
+  outline: none;
+  color: #1d2129;
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  width: 92%;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #007bff;
+  border: none;
+  border-radius: 0.25rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.5rem;
+  width: 95%;
+}
+
+button:hover {
+  background-color: #0069d9;
+}
