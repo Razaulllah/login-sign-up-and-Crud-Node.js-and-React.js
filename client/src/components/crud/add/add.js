@@ -4,6 +4,10 @@ import axios from "axios";
 
 class AddCustomers extends Component {
   
+  nameRef = React.createRef();
+  emailRef = React.createRef();
+  phoneRef = React.createRef();
+
   state = {
     name: "",
     email: " ",
@@ -15,13 +19,13 @@ class AddCustomers extends Component {
   addCustomers = async e => {
     try {
       const newCustomer = await axios.post("http://localhost:9002/customers", {
-          name: this.refs.name.value,
-          email: this.refs.email.value,
-          phone: this.refs.phone.value,
+          name: this.nameRef.current.value,
+          email: this.emailRef.current.value,
+          phone: this.phoneRef.current.value,
         }
       );
       alert(newCustomer.data.message)
-      
+      window.location.href = '/home';
     } catch (err) {
       alert(err.message);
     }
@@ -30,7 +34,7 @@ class AddCustomers extends Component {
 
   render() {
     return (
-      <div className="Customers-Wrapper">
+      <div className="add">
         <h1>Add Customer:</h1>
 
         <label htmlFor="name">Name:</label>
@@ -39,7 +43,7 @@ class AddCustomers extends Component {
             placeholder="Enter name"
             name="name"
             onChange={this.onChangeHandler}
-            ref="name"
+            ref={this.nameRef}
             required
             id="name"
           />
@@ -49,7 +53,7 @@ class AddCustomers extends Component {
             placeholder="Enter email"
             name="email"
             onChange={this.onChangeHandler}
-            ref="email"
+            ref={this.emailRef}
             required
             id="email"
           />
@@ -59,7 +63,7 @@ class AddCustomers extends Component {
             placeholder="Enter phone"
             name="phone"
             onChange={this.onChangeHandler}
-            ref="phone"
+            ref={this.phoneRef}
             required
             id="phone"
           />

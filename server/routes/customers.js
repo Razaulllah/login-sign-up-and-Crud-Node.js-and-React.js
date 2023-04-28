@@ -34,7 +34,6 @@ app.put('/:id', async (req, res) => {
   }
 });
 // @route   POST /api/customers/
-// @desc    Create a student
 // @access  Public
 app.post('/', async (req, res) => {
   try {

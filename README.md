@@ -5,6 +5,3 @@
 3. npm start 
 4. Open another terminal and cd .\server\  
 5. npm run serve
-
-login and sign both backend and frontend are complete
-but in CRUD app backend complete and frontend only add customers
